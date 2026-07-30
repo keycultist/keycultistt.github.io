@@ -1,0 +1,495 @@
+:root{
+    --bg:#F6F4EF;
+    --surface:#FFFFFF;
+
+    --text:#1A1A1A;
+    --muted:#6D6D6D;
+
+    --orange:#F97316;
+    --blue:#3B82F6;
+    --snow:#BFE9FF;
+
+    --border:#D8D8D8;
+
+    --sidebar-width:220px;
+}
+
+/* ---------- RESET ---------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:Inter,sans-serif;
+}
+
+/* ---------- SIDEBAR ---------- */
+
+.sidebar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:var(--sidebar-width);
+    height:100vh;
+
+    background:white;
+
+    display:flex;
+    flex-direction:column;
+
+    border-right:1px solid var(--border);
+
+    z-index:1000;
+}
+
+.sidebar::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    right:0;
+
+    width:4px;
+    height:100%;
+
+    background:var(--orange);
+}
+
+/* ---------- LOGO ---------- */
+
+.sidebar-logo{
+
+    height:240px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-bottom:1px solid var(--border);
+}
+
+.logo-text{
+
+    font-size:2.7rem;
+
+    font-weight:900;
+
+    line-height:.9;
+
+    letter-spacing:.08em;
+
+    text-align:center;
+}
+
+/* ---------- NAVIGATION ---------- */
+
+.sidebar-links{
+
+    flex:1;
+
+    list-style:none;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    gap:26px;
+
+    margin-bottom: 110%;
+}
+
+.sidebar-links a{
+
+    text-decoration:none;
+
+    color:var(--muted);
+
+    text-transform:uppercase;
+
+    letter-spacing:.22rem;
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+    transition:.25s;
+
+    position:relative;
+}
+
+.sidebar-links a:hover{
+
+    color:var(--orange);
+
+    transform:translateX(6px);
+}
+
+.sidebar-links a.active{
+
+    color:var(--orange);
+}
+
+.sidebar-links a.active::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-18px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:8px;
+    height:2px;
+
+    background:var(--orange);
+}
+
+/* ---------- MAIN ---------- */
+
+main{
+
+    margin-left:var(--sidebar-width);
+}
+
+/* ---------- HERO ---------- */
+
+#hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:center;
+}
+
+/* ---------- BACKGROUND LAYERS ---------- */
+
+.hero-backgrounds{
+
+    position:absolute;
+
+    inset:0;
+}
+
+.hero-bg{
+
+    position:absolute;
+
+    inset:0;
+
+    background-size:cover;
+    background-position:center;
+
+    opacity:0;
+
+    transition:opacity .6s ease;
+}
+
+.hero-bg.active{
+
+    opacity:1;
+}
+
+#bg-surf{
+
+    background-image:url("images/MainPageSurf.webp");
+}
+
+#bg-skate{
+
+    background-image:url("images/MainPageSkate.jpg");
+}
+
+#bg-snow{
+
+    background-image:url("images/MainPageSnowboard.jpg");
+}
+
+/* ---------- DARK OVERLAY ---------- */
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.35)
+    );
+
+    z-index:1;
+}
+
+/* ---------- HERO CONTENT ---------- */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    color:white;
+
+    padding:90px;
+
+    max-width:900px;
+}
+
+/* ---------- MAGAZINE ACCENT ---------- */
+
+.hero-accent{
+
+    border-left:5px solid var(--orange);
+
+    padding-left:35px;
+}
+
+/* ---------- TEXT ---------- */
+
+.hero-subtitle{
+
+    color:var(--orange);
+
+    text-transform:uppercase;
+
+    letter-spacing:.45rem;
+
+    font-size:.95rem;
+
+    margin-bottom:18px;
+}
+
+.hero-content h2{
+
+    font-size:7rem;
+
+    line-height:.9;
+
+    font-weight:900;
+
+    margin-bottom:25px;
+}
+
+.hero-description{
+
+    color:rgba(255,255,255,.92);
+
+    font-size:1.35rem;
+
+    margin-bottom:50px;
+}
+
+/* ---------- TABS ---------- */
+
+.hero-tabs{
+
+    display:flex;
+
+    gap:45px;
+}
+
+.hero-tab{
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    letter-spacing:.25rem;
+
+    cursor:pointer;
+
+    position:relative;
+
+    padding-bottom:12px;
+
+    transition:.3s;
+}
+
+.hero-tab:hover{
+
+    color:var(--orange);
+}
+
+.hero-tab::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:0;
+
+    height:3px;
+
+    background:var(--orange);
+
+    transition:width .3s ease;
+}
+
+.hero-tab:hover::after,
+.hero-tab.active::after{
+
+    width:100%;
+}
+
+/* ----HISTORY SECTION----- */
+#history{
+
+    min-height:100vh;
+
+    background-image: "images/paperText.jpg";
+
+    padding:120px 100px;
+}
+
+.section-header{
+
+    margin-bottom:100px;
+
+    max-width:700px;
+}
+
+.section-number{
+
+    color:var(--orange);
+
+    letter-spacing:.4rem;
+
+    margin-bottom:15px;
+
+    font-weight:700;
+}
+
+.section-header h2{
+
+    font-size:4rem;
+
+    line-height:1;
+
+    margin-bottom:30px;
+}
+.section-intro{
+
+    color:#666;
+
+    font-size:1.2rem;
+
+    line-height:1.8;
+}
+
+.timeline{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:120px;
+}
+
+.timeline-item{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+}
+
+.timeline-item.reverse .timeline-image{
+
+    order:2;
+}
+
+.timeline-item.reverse .timeline-content{
+
+    order:1;
+}
+
+.timeline-image img{
+
+    width:100%;
+
+    height:450px;
+
+    object-fit:cover;
+
+    border-radius:8px;
+
+    transition:.4s;
+}
+
+.timeline-image img:hover{
+
+    transform:scale(1.03);
+}
+
+.year{
+
+    color:var(--orange);
+
+    font-weight:700;
+
+    letter-spacing:.25rem;
+}
+
+.timeline-content h3{
+
+    font-size:2.5rem;
+
+    margin:15px 0 25px;
+}
+
+.timeline-content p{
+
+    color:#555;
+
+    line-height:1.8;
+
+    font-size:1.1rem;
+}
+
+/* ---------- START OF CULTURE SECTION ---------- */
+
+#culture{
+
+    min-height:100vh;
+
+    background-image: "images/paperText.jpg";
+
+    padding:120px 100px;
+}
