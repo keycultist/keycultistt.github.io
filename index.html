@@ -9,267 +9,304 @@
 </head>
 <body>
 
-    <header>
-        <nav class="sidebar" aria-label="Main navigation">
-            <div class="sidebar-logo">
-                <h1 class="logo-text">
-                    BOARD<br>
-                    SPORTS
+        <div id="loader">
+
+            <div class="loader-content">
+
+                <h1 class="loader-logo">
+                    BOARD<br>SPORTS
                 </h1>
+
+                <p class="loader-tagline">
+                    INTERACTIVE MAGAZINE
+                </p>
+
+                <div class="loader-progress">
+                    <div class="loader-progress-fill"></div>
+                </div>
+
             </div>
-            <ul class="sidebar-links">
-                <li><a href="#hero" class="nav-active" title="Home">Home</a></li>
-                <li><a href="#history" title="History">History</a></li>
-                <li><a href="#culture" title="Culture">Culture</a></li>
-                <li><a href="#Compare" title="Compare">Compare</a></li>
-                <li><a href="#Game" title="Game">Play</a></li>
-            </ul>
-        </nav>
-    </header>
-
-
-    <main>
-
-    <section id="hero">
-
-        <div class="hero-backgrounds">
-
-            <div class="hero-bg active" id="bg-surf"></div>
-            <div class="hero-bg" id="bg-skate"></div>
-            <div class="hero-bg" id="bg-snow"></div>
-
-            <div class="hero-overlay"></div>
 
         </div>
 
-        <div class="hero-content">
+        <header>
+            <nav class="sidebar" aria-label="Main navigation">
+                <div class="sidebar-logo">
+                    <h1 class="logo-text">
+                        BOARD<br>
+                        SPORTS
+                    </h1>
+                </div>
+                    <ul class="sidebar-links">
+                        <li><a href="#hero" class="nav-link active">Home</a></li>
+                        <li><a href="#history" class="nav-link">History</a></li>
+                        <li><a href="#culture" class="nav-link">Culture</a></li>
+                        <li><a href="#compare" class="nav-link">Compare</a></li>
+                        <li><a href="#game" class="nav-link">Play</a></li>
+                    </ul>
+            </nav>
+        </header>
 
-            <div class="hero-accent">
 
-                <p class="hero-subtitle">
-                    THE WORLD OF
+        <main>
+
+        <section id="hero">
+
+            <div class="hero-backgrounds">
+
+                <div class="hero-bg active" id="bg-surf"></div>
+                <div class="hero-bg" id="bg-skate"></div>
+                <div class="hero-bg" id="bg-snow"></div>
+
+                <div class="hero-overlay"></div>
+
+            </div>
+
+            <div class="hero-content">
+
+                <div class="hero-accent">
+
+
+                    <p class="hero-subtitle">
+                        THE WORLD OF
+                    </p>
+
+                    <h2 id="hero-title">
+                        SURFBOARDING
+                    </h2>
+
+                    <p
+                        class="hero-description"
+                        id="hero-description">
+
+                        Where boardsports began. Ride the world's most iconic waves.
+
+                    </p>
+
+                    <div class="hero-tabs">
+
+                        <button
+                            class="hero-tab active"
+                            data-bg="surf"
+                            data-title="SURFBOARDING"
+                            data-description="Where boardsports began. Ride the world's most iconic waves.">
+
+                            SURF
+
+                        </button>
+
+                        <button
+                            class="hero-tab"
+                            data-bg="skate"
+                            data-title="SKATEBOARDING"
+                            data-description="From empty swimming pools to city streets. Skateboarding shaped generations.">
+
+                            SKATE
+
+                        </button>
+
+                        <button
+                            class="hero-tab"
+                            data-bg="snow"
+                            data-title="SNOWBOARDING"
+                            data-description="Taking boards to the mountains. Speed, style and fresh powder.">
+
+                            SNOW
+
+                        </button>
+
+
+
+                </div>
+
+                                    <div class="hero-issue">
+
+                            <p class="issue-number">
+                                ISSUE 01
+                            </p>
+
+                            <h4 id="issue-title">
+                                BIANNUALE EDITION
+                            </h4>
+
+                            <p id="issue-subtitle">
+                                THE ORIGIN SPECIAL
+                            </p>
+
+                        </div>
+
+            </div>
+
+        </section>
+
+        <section id="history">
+
+            <div class="section-header">
+
+                <p class="section-number">
+                    PAGE 02
                 </p>
 
-                <h2 id="hero-title">
-                    SURFBOARDING
+                <h2>
+                    THE EVOLUTION OF BOARDSPORTS
                 </h2>
 
-                <p
-                    class="hero-description"
-                    id="hero-description">
+                <p class="section-intro">
 
-                    Where boardsports began. Ride the world's most iconic waves.
+                    From California beaches to Olympic slopes, discover how
+                    boardsports evolved into a worldwide culture.
 
                 </p>
 
-                <div class="hero-tabs">
+            </div>
 
-                    <button
-                        class="hero-tab active"
-                        data-bg="surf"
-                        data-title="SURFBOARDING"
-                        data-description="Where boardsports began. Ride the world's most iconic waves.">
+            <div class="timeline">
 
-                        SURF
+                <!-- Surf -->
 
-                    </button>
+                <article class="timeline-item">
 
-                    <button
-                        class="hero-tab"
-                        data-bg="skate"
-                        data-title="SKATEBOARDING"
-                        data-description="From empty swimming pools to city streets. Skateboarding shaped generations.">
+                    <div class="timeline-image">
 
-                        SKATE
+                        <img src="images/vintageSurf.jpg"
+                            alt="Vintage surfing">
 
-                    </button>
+                    </div>
 
-                    <button
-                        class="hero-tab"
-                        data-bg="snow"
-                        data-title="SNOWBOARDING"
-                        data-description="Taking boards to the mountains. Speed, style and fresh powder.">
+                    <div class="timeline-content">
 
-                        SNOW
+                        <span class="year">1950s</span>
 
-                    </button>
+                        <h3>Surfing Goes Mainstream</h3>
 
-                </div>
+                        <p>
+
+                            Modern surfing exploded in popularity after World War II,
+                            spreading from Hawaii and California to beaches around
+                            the world.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <!-- Skate -->
+
+                <article class="timeline-item reverse">
+
+                    <div class="timeline-image">
+
+                        <img src="images/vintaageSkate.jpg"
+                            alt="Old picture of a person skating in an empty pool">
+
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <span class="year">1970s</span>
+
+                        <h3>The Rise of Skateboarding</h3>
+
+                        <p>
+
+                            Skateboarding grew rapidly as surfers looked for a way
+                            to ride when the waves were flat, eventually becoming a
+                            culture of its own.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+                            <article class="timeline-item">
+
+                    <div class="timeline-image">
+
+                        <img src="images/1965championship.jpg"
+                            alt="Old picture of a person skating in an empty pool">
+
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <span class="year">1970s</span>
+
+                        <h3>The Rise of Skateboarding</h3>
+
+                        <p>
+
+                
+
+                            Skateboarding's most notable early and arguably first actual competition was held in Anaheim, California and broadcasted on live Television, contributing to the 
+                            growth and popularity of the sport. The styles of skateboarding back then we heavily surf-inspired, and different from what we have now, but that doesn't
+                            discredit the impact this event had.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+                            <article class="timeline-item reverse">
+
+                    <div class="timeline-image">
+
+                        <img src="images/vintageSnow.jpg"
+                            alt="Old skateboard">
+
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <span class="year">1970s</span>
+
+                        <h3>The First Snowboard</h3>
+
+                        <p>
+
+                            Snowboarding was invented in 1965, and though initially crude, it served as a way for
+                            surfers and skateboarders to hit the snowy mountains in a more comfortable form factor
+                            over two skis.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+                            </article>
+
+                            <article class="timeline-item">
+
+                    <div class="timeline-image">
+
+                        <img src="images/vintageSnowCompetition.jpg"
+                            alt="Old skateboard">
+
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <span class="year">1980s</span>
+
+                        <h3>The First Snowboarding Competition</h3>
+
+                        <p>
+
+                            Just a decade and a half later, the first snowboarding competition would be organized in Colorado, called the "King of The Mountain" event.
+                            Despite it's low attendance of just 12 people, this was the first of many competitions that would spiral onto the massive recognition of snowboarding today.
+
+                        </p>
+
+                    </div>
+
+                </article>
 
             </div>
 
-        </div>
-
-    </section>
-
-    <section id="history">
-
-        <div class="section-header">
-
-            <p class="section-number">
-                PAGE 02
-            </p>
-
-            <h2>
-                THE EVOLUTION OF BOARDSPORTS
-            </h2>
-
-            <p class="section-intro">
-
-                From California beaches to Olympic slopes, discover how
-                boardsports evolved into a worldwide culture.
-
-            </p>
-
-        </div>
-
-        <div class="timeline">
-
-            <!-- Surf -->
-
-            <article class="timeline-item">
-
-                <div class="timeline-image">
-
-                    <img src="images/vintageSurf.jpg"
-                        alt="Vintage surfing">
-
-                </div>
-
-                <div class="timeline-content">
-
-                    <span class="year">1950s</span>
-
-                    <h3>Surfing Goes Mainstream</h3>
-
-                    <p>
-
-                        Modern surfing exploded in popularity after World War II,
-                        spreading from Hawaii and California to beaches around
-                        the world.
-
-                    </p>
-
-                </div>
-
-            </article>
-
-            <!-- Skate -->
-
-            <article class="timeline-item reverse">
-
-                <div class="timeline-image">
-
-                    <img src="images/vintaageSkate.jpg"
-                        alt="Old picture of a person skating in an empty pool">
-
-                </div>
-
-                <div class="timeline-content">
-
-                    <span class="year">1970s</span>
-
-                    <h3>The Rise of Skateboarding</h3>
-
-                    <p>
-
-                        Skateboarding grew rapidly as surfers looked for a way
-                        to ride when the waves were flat, eventually becoming a
-                        culture of its own.
-
-                    </p>
-
-                </div>
-
-            </article>
-
-                        <article class="timeline-item">
-
-                <div class="timeline-image">
-
-                    <img src="images/1965championship.jpg"
-                        alt="Old picture of a person skating in an empty pool">
-
-                </div>
-
-                <div class="timeline-content">
-
-                    <span class="year">1970s</span>
-
-                    <h3>The Rise of Skateboarding</h3>
-
-                    <p>
-
-            
-
-                        Skateboarding's most notable early and arguably first actual competition was held in Anaheim, California and broadcasted on live Television, contributing to the 
-                        growth and popularity of the sport. The styles of skateboarding back then we heavily surf-inspired, and different from what we have now, but that doesn't
-                        discredit the impact this event had.
-
-                    </p>
-
-                </div>
-
-            </article>
-
-                        <article class="timeline-item reverse">
-
-                <div class="timeline-image">
-
-                    <img src="images/vintageSnow.jpg"
-                        alt="Old skateboard">
-
-                </div>
-
-                <div class="timeline-content">
-
-                    <span class="year">1970s</span>
-
-                    <h3>The First Snowboard</h3>
-
-                    <p>
-
-                        Snowboarding was invented in 1965, and though initially crude, it served as a way for
-                        surfers and skateboarders to hit the snowy mountains in a more comfortable form factor
-                        over two skis.
-
-                    </p>
-
-                </div>
-
-            </article>
-
-                        </article>
-
-                        <article class="timeline-item">
-
-                <div class="timeline-image">
-
-                    <img src="images/vintageSnowCompetition.jpg"
-                        alt="Old skateboard">
-
-                </div>
-
-                <div class="timeline-content">
-
-                    <span class="year">1980s</span>
-
-                    <h3>The First Snowboarding Competition</h3>
-
-                    <p>
-
-                        Just a decade and a half later, the first snowboarding competition would be organized in Colorado, called the "King of The Mountain" event.
-                        Despite it's low attendance of just 12 people, this was the first of many competitions that would spiral onto the massive recognition of snowboarding today.
-
-                    </p>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </section>
+        </section>
 
     <section id="culture">
 
@@ -279,20 +316,328 @@
                 PAGE 03
             </p>
 
-            <h2>
-                THE CULTURE OF BOARDSPORTS
-            </h2>
+            <h2>BOARDSPORT CULTURE</h2>
 
             <p class="section-intro">
-
-                Discover the culture that's evolved, from streetsweepers to powdermanglers, to the pop culture and media it's inspired.
-
+                From fashion and music to competitions and film, boardsports have
+                shaped popular culture around the world.
             </p>
+
+        </div>
+
+        <div class="culture-tabs">
+
+            <button class="culture-tab active" data-culture="surf">
+                SURF
+            </button>
+
+            <button class="culture-tab" data-culture="skate">
+                SKATE
+            </button>
+
+            <button class="culture-tab" data-culture="snow">
+                SNOW
+            </button>
+
+        </div>
+
+        <div class="culture-content">
+
+            <!-- SURF -->
+
+            <article class="culture-article active" id="culture-surf">
+
+                <img src="images/surfCulture.jpg" alt="Surf Culture">
+
+                <div>
+
+                    <h3>Surf Culture</h3>
+
+                    <p>
+                        Surf culture helped popularise beach fashion,
+                        surf rock music, and brands such as Billabong,
+                        Quiksilver and Rip Curl. It continues to influence
+                        travel, photography and environmental awareness.
+                    </p>
+
+                    <blockquote>
+                        "The ocean is both playground and lifestyle."
+                    </blockquote>
+
+                </div>
+
+            </article>
+
+            <!-- SKATE -->
+
+            <article class="culture-article" id="culture-skate">
+
+                <img src="images/skateCulture.webp" alt="Skate Culture">
+
+                <div>
+
+                    <h3>Skate Culture</h3>
+
+                    <p>
+                        Skateboarding became deeply connected with punk,
+                        hip-hop and streetwear. Brands like Vans and
+                        Supreme, along with the X Games and Tony Hawk,
+                        brought skateboarding into mainstream media.
+                    </p>
+
+                    <blockquote>
+                        "Every street becomes a skatepark."
+                    </blockquote>
+
+                </div>
+
+            </article>
+
+            <!-- SNOW -->
+
+            <article class="culture-article" id="culture-snow">
+
+                <img src="images/snowCulture.avif" alt="Snow Culture">
+
+                <div>
+
+                    <h3>Snowboard Culture</h3>
+
+                    <p>
+                        Snowboarding introduced a freer, more expressive
+                        style to winter sports, becoming closely associated
+                        with mountain resorts, freestyle competitions and
+                        Olympic events.
+                    </p>
+
+                    <blockquote>
+                        "Freedom starts at the top of the mountain."
+                    </blockquote>
+
+                </div>
+
+            </article>
 
         </div>
 
     </section>
 
-</main>
+    <section id="compare">
+
+        <div class="section-header">
+
+            <p class="section-number">PAGE 04</p>
+
+            <h2>WHICH BOARD IS YOURS?</h2>
+
+            <p class="section-intro">
+                Compare the three major boardsports and discover
+                which one suits your style.
+            </p>
+
+        </div>
+
+        <div class="compare-grid">
+
+            <!-- SURF -->
+
+            <article class="compare-card" data-card="surf">
+
+                <div class="award-stamp">
+
+                    <span class="stamp-top">★★★★★</span>
+
+                    <span class="stamp-title">EDITOR'S</span>
+
+                    <span class="stamp-subtitle">PICK</span>
+
+                    <span class="stamp-bottom">★★★★★</span>
+
+                </div>
+
+                <img src="images/surfBoard.webp" alt="Surfboard">
+
+                <h3>Surf</h3>
+
+                <p>Ride the ocean.</p>
+
+            </article>
+
+            <!-- SKATE -->
+
+            <article class="compare-card" data-card="skate">
+
+                <div class="award-stamp">
+
+                    <span class="stamp-top">★★★★★</span>
+
+                    <span class="stamp-title">EDITOR'S</span>
+
+                    <span class="stamp-subtitle">PICK</span>
+
+                    <span class="stamp-bottom">★★★★★</span>
+
+                </div>  
+
+                <img src="images/skateBoard.jpg" alt="Skateboard">
+
+                <h3>Skate</h3>
+
+                <p>Master the streets.</p>
+
+            </article>
+
+            <!-- SNOW -->
+
+            <article class="compare-card" data-card="snow">
+
+                <div class="award-stamp">
+
+                    <span class="stamp-top">★★★★★</span>
+
+                    <span class="stamp-title">EDITOR'S</span>
+
+                    <span class="stamp-subtitle">PICK</span>
+
+                    <span class="stamp-bottom">★★★★★</span>
+
+                </div>
+
+                <img src="images/snowBoard.webp" alt="Snowboard">
+
+                <h3>Snow</h3>
+
+                <p>Conquer the mountains.</p>
+
+            </article>
+
+        </div>
+
+    <div class="compare-details">
+
+        <h3 id="compare-title">
+            Choose a Boardsport
+        </h3>
+
+        <p id="compare-description">
+            Click one of the cards above to compare the sports.
+        </p>
+
+        <div class="compare-stats">
+
+            <div class="stat compare-reveal">
+                <div class="stat">
+
+                    <h4>Difficulty</h4>
+
+                    <div class="stat-bar">
+
+                        <div class="stat-fill" id="difficulty-fill"></div>
+
+                    </div>
+
+                    <p id="compare-difficulty">0%</p>
+
+                </div>
+            </div>
+
+            <div class="stat compare-reveal">
+                <div class="stat">
+
+                    <h4>Cost</h4>
+
+                    <div class="stat-bar">
+
+                        <div class="stat-fill" id="cost-fill"></div>
+
+                    </div>
+
+                    <p id="compare-cost">0%</p>
+
+                </div>
+            </div>
+
+            <div class="stat compare-reveal">
+                <div class="stat">
+                    <h4>Best For</h4>
+                    <p id="compare-best">-</p>
+                </div>
+            </div>
+
+            <div class="stat compare-reveal">
+                <div class="stat">
+                    <h4>Olympic Sport?</h4>
+                    <p id="compare-olympic">-</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+    </section>
+
+    <section id="game">
+
+    <div class="section-header">
+
+        <p class="section-number">
+            PAGE 05
+        </p>
+
+        <h2>SNOWBOARD RUSH</h2>
+
+        <p class="section-intro">
+            Dodge trees, avoid rocks and survive as long as possible.
+        </p>
+
+    </div>
+
+    <div class="game-ui">
+
+        <span>Score: <span id="score">0</span></span>
+
+        <button id="start-game">
+            PLAY
+        </button>
+
+    </div>
+
+    <div id="game-area">
+
+        <img
+            src="images/player.png"
+            id="player"
+            alt="Snowboarder">
+
+    </div>
+
+</section>
+
+    </main>
+
+    <div id="fact-mascot">
+
+    <img
+        src="images/lil guy.png"
+        alt="Mascot"
+        id="mascot">
+
+    <div id="fact-box">
+
+        <h4 id="fact-heading">
+            DID YOU KNOW?
+        </h4>
+
+        <p id="fact-text">
+            Surfing became an Olympic sport in 2020.
+        </p>
+
+    </div>
+
+</div>
+
 
 </body>
