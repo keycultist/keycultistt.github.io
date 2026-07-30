@@ -1,0 +1,334 @@
+@keyframes slideOutFromRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideOutFromLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.content{
+    margin: auto;
+}
+
+#Header {
+    width: 100%;
+    height: 50px;
+    margin: -8px;
+    margin-top: 1%;
+    background-color: rgb(107, 114, 205);
+    display: grid;
+    place-items: end;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#navbar ul {
+    display: flex;
+    align-items: center;
+    position: relative;
+    list-style-type: none;
+
+}
+
+#navbar li {
+    display: inline-block;
+    position: relative;
+    margin-right: 50px;
+}
+
+
+#navbar ul li {
+    color: rgb(255, 255, 255);  
+    transform: scale(1);
+    transition: transform 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+#navbar ul li:hover {
+    color: rgb(174, 177, 230);
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+#navbar ul li a {
+    color: rgb(255, 255, 255);  
+    transition: color 0.15s ease-in-out;
+    text-decoration: none;
+}
+
+#navbar ul li a:hover {
+    color: rgb(174, 177, 230);
+    transition: color 0.15s ease-in-out;
+    text-decoration: none;
+}
+
+#Body {
+    display: grid;
+    gap: 5px;
+    width: 95%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto;
+    grid-gap: 2%;
+}
+
+#JunkDrawerTitle {
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+    background-color: rgb(132, 139, 235);
+    border-radius: 10px;
+    color: white;
+    height: 230px;
+    text-align: center;
+    line-height: 35px; 
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#MainContent {
+    animation: 1s ease-out 0s 1 slideInFromRight;
+
+    position: relative;
+    background-color: rgb(132, 139, 235);
+    height : 230px;
+    border-radius: 10px;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 2.5fr;
+}
+
+#MainContentFull {
+    animation: 1s ease-out 0s 1 slideInFromRight;
+    position: relative;
+    background-color: rgb(132, 139, 235);
+    height : 230px;
+    border-radius: 10px;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 2.5fr;
+}
+
+#MainContentArt {
+    animation: 1s ease-out 0s 1 slideInFromRight;
+    grid-column: 1 / -1;
+    position: relative;
+    background-color: rgb(132, 139, 235);
+    height : 230px;
+    border-radius: 10px;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    padding-left: 1%;
+    padding-right: 1%;
+    grid-template-columns: 1fr 5fr;
+}
+
+#JunkDrawerTitle JunkDrawerContent {
+
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#MainContentTwo {
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+
+    grid-column: 1 / -1;
+    position: relative;
+    background-color: rgb(132, 139, 235);
+    height : 385px;
+    border-radius: 10px;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 0.5fr 0.1fr 2.5fr;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.SmallSquareImg Img {
+    position:relative;
+    width:150px;
+    height:150px;
+    border-radius: 10px;
+}
+
+#MediumSquareImgGallery {
+    position: relative;
+}
+
+#MediumSquareImgGallery img {
+    position: relative;
+    width:250px;
+    height:250px;
+    border-radius: 10px;
+}
+
+#MediumSquareImgGalleryLTR {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin-left: 3.5%;
+    margin-right: auto;
+    gap:15px;
+}
+
+#MediumSquareImgGalleryLTR img {
+    position: relative;
+    width:250px;
+    height:250px;
+    border-radius: 10px;
+}
+
+#GameContainer {
+    grid-column: 1 / -1;
+    background-color: rgb(255, 255, 255);
+    border-radius: 200px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: rgb(132, 139, 235);
+    overflow: hidden;
+    display: block;
+    grid-template-columns: 1fr 1fr;
+}
+
+#Board {
+    position: relative;
+    top: 60%;
+    bottom: 0;
+}
+
+#Board img {
+    width: 100px;
+    height: 100px;
+    
+}
+
+@keyframes roadblockMove {
+    from { right: 0; }
+    to { right: 100%; }
+}
+
+@keyframes Jump {
+    from { top: 0; }
+    to { top: -30%; }
+}
+
+#Roadblock {
+    position: relative;
+    top:60%;
+    right: 0;
+}
+
+#Roadblock img {
+    width: 75px;
+    height: 75px;
+}
+
+#RightButton button{
+    position: relative;
+    z-index: 5;
+    background-color: white;
+    border-radius: 10px;
+    width: 30px;
+    height: 40px;
+    text-align: center;
+}
+
+.bodyText {
+    color: white;
+    text-align: center;
+    font-size: large;
+}
+
+.bodyTextFull{
+    grid-column: 1 / -1;
+    color: white;
+    text-align: center;
+    font-size: large;
+}
+
+.titleText {
+    grid-column: 1 / -1;
+    color: white;
+    font-size: xx-large;
+}
+
+.Button {
+    grid-column: 1 / -1;
+    color: white;
+    font-size: x-large;
+    margin-bottom: 10%;
+    transform: scale(1);
+    transition: transform 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+
+.Button:hover {
+    grid-column: 1 / -1;
+    color: rgb(174, 177, 230);
+    font-size: x-large;
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+#Footer {
+    width: 100%;
+    height: 300px;
+    margin: -8px;
+    margin-top: 2%;
+    background-color: rgb(107, 114, 205);
+    display: grid;
+    place-items: end;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#MainContent.fadeIn {
+    animation: 1s ease-out 0s 1 slideOutFromLeft;
+}
+
+#JunkDrawerTitle.fadein {
+    animation: 1s ease-out 0s 1 slideOutFromLeft;
+}
+
+#MainContentTwo.fadeIn {
+    animation: 1s ease-out 0s 1 SlideOutFromRight;
+
+}
+
+
