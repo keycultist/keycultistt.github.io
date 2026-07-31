@@ -1825,9 +1825,234 @@ blockquote{
 
 }
 
+#survey{
 
+    padding:120px 100px;
 
+    background:#f7f4ee;
 
+}
+
+.survey-form{
+
+    max-width:700px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.survey-form label{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    font-weight:700;
+
+    letter-spacing:.08rem;
+
+}
+
+.survey-form input,
+.survey-form select,
+.survey-form textarea{
+
+    padding:15px;
+
+    border:2px solid #ddd;
+
+    font-size:1rem;
+
+    background:white;
+
+}
+
+.survey-options{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:10px;
+
+}
+
+.submit-btn{
+
+    padding:18px;
+
+    background:var(--orange);
+
+    color:white;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    letter-spacing:.15rem;
+
+    transition:.3s;
+
+}
+
+.submit-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+#survey-message{
+
+    margin-top:40px;
+
+    font-size:1.3rem;
+
+    color:var(--orange);
+
+    font-weight:700;
+
+}
+
+/* ---------- SURVEY SUCCESS ---------- */
+
+.survey-success{
+
+    display:none;
+
+    margin-top:50px;
+
+    padding:40px;
+
+    background:white;
+
+    border:3px solid var(--orange);
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.survey-success.show{
+
+    display:block;
+
+    animation:issueReveal .6s ease;
+
+}
+
+@keyframes issueReveal{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+.survey-stamp{
+
+    width:120px;
+    height:120px;
+
+    margin:0 auto 25px;
+
+    border:6px solid var(--orange);
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:3rem;
+
+    font-weight:900;
+
+    color:var(--orange);
+
+    transform:scale(0);
+
+}
+
+.survey-success.show .survey-stamp{
+
+    animation:stampDrop .55s cubic-bezier(.18,1.4,.4,1) forwards;
+
+}
+
+.editor-ribbon{
+
+    position:absolute;
+
+    top:48px;
+    right:-65px;
+
+    transform:rotate(45deg);
+
+    background:var(--orange);
+
+    color:white;
+
+    padding:10px 70px;
+
+    font-weight:800;
+
+    letter-spacing:.2rem;
+
+}
+
+@keyframes stampDrop{
+
+    0%{
+
+        transform:
+            translateY(-180px)
+            rotate(-20deg)
+            scale(2);
+
+    }
+
+    70%{
+
+        transform:
+            translateY(10px)
+            rotate(5deg)
+            scale(.9);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(1);
+
+    }
+
+}
 
 
 /* =========================================
@@ -2273,6 +2498,18 @@ blockquote{
     .desktop-qr{
 
         display:none;
+
+    }
+
+    #survey{
+
+        padding:70px 30px;
+
+    }
+
+    .survey-options{
+
+        grid-template-columns:1fr;
 
     }
 

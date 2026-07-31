@@ -1111,3 +1111,35 @@ mobileLinks.forEach(function(link){
     });
 
 });
+
+// SURVEY LAST MINUTE ADDITION
+
+const surveyForm = document.getElementById("survey-form");
+
+const surveyMessage = document.getElementById("survey-message");
+
+const thankTitle = document.getElementById("thank-you-title");
+
+const thankText = document.getElementById("thank-you-text");
+
+surveyForm.addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    const name =
+        document.getElementById("reader-name").value;
+
+    const sport =
+        document.querySelector('input[name="sport"]:checked').value;
+
+    thankTitle.textContent =
+        `Thank You, ${name}!`;
+
+    thankText.textContent =
+        `Your vote for ${sport} has officially been received by our editorial team.`;
+
+    surveyForm.style.display = "none";
+
+    surveyMessage.classList.add("show");
+
+});

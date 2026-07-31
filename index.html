@@ -59,7 +59,6 @@
                         <li><a href="#compare" class="nav-link">Compare</a></li>
                         <li><a href="#game" class="nav-link">Play</a></li>
                     </ul>
-
             </nav>
         </header>
 
@@ -691,6 +690,119 @@
         <button id="right-btn">▶</button>
 
     </div>
+
+</section>
+
+<section id="survey">
+
+    <div class="section-header">
+
+        <p class="section-number">PAGE 06</p>
+
+        <h2>READER'S SURVEY</h2>
+
+        <p class="section-intro">
+            Tell us what you thought about this issue of BOARDSPORTS.
+            Your opinion helps shape the next edition!
+        </p>
+
+    </div>
+
+    <form id="survey-form" class="survey-form">
+
+        <label>
+            Name
+            <input
+                type="text"
+                id="reader-name"
+                placeholder="Enter your name"
+                required>
+        </label>
+
+        <label>
+            Which boardsport interests you the most?
+        </label>
+
+        <div class="survey-options">
+
+            <label><input type="radio" name="sport" value="Surf" required> Surfing</label>
+
+            <label><input type="radio" name="sport" value="Skate"> Skateboarding</label>
+
+            <label><input type="radio" name="sport" value="Snow"> Snowboarding</label>
+
+        </div>
+
+        <label>
+            Which sections did you enjoy?
+        </label>
+
+        <div class="survey-options">
+
+            <label><input type="checkbox" name="sections" value="History"> History</label>
+
+            <label><input type="checkbox" name="sections" value="Culture"> Culture</label>
+
+            <label><input type="checkbox" name="sections" value="Compare"> Compare</label>
+
+            <label><input type="checkbox" name="sections" value="Game"> Mini Game</label>
+
+        </div>
+
+        <label>
+            Overall Rating
+        </label>
+
+        <select id="rating">
+
+            <option>★★★★★ Amazing</option>
+            <option>★★★★ Great</option>
+            <option>★★★ Good</option>
+            <option>★★ Fair</option>
+            <option>★ Needs Improvement</option>
+
+        </select>
+
+        <label>
+            Leave an Editor's Note
+        </label>
+
+        <textarea
+            id="comments"
+            rows="5"
+            placeholder="Share your thoughts..."></textarea>
+
+        <button type="submit" class="submit-btn">
+
+            SUBMIT SURVEY
+
+        </button>
+
+    </form>
+
+    <div id="survey-message" class="survey-success">
+
+    <div class="survey-stamp">
+
+        ✓
+
+    </div>
+
+    <div class="editor-ribbon">
+
+        APPROVED
+
+    </div>
+
+    <h3 id="thank-you-title"></h3>
+
+    <p id="thank-you-text"></p>
+
+    <p class="issue-number">
+        Added to <strong>BOARDSPORTS Magazine — Issue #02</strong>
+    </p>
+
+</div>
 
 </section>
 
