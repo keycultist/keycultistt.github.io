@@ -2318,6 +2318,30 @@ blockquote{
 
     }
 
+    .compare-stats{
+
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:15px;
+
+    }
+
+    .stat{
+
+        width:100%;
+        min-width:0;
+        text-align:center;
+
+    }
+
+    #compare-title{
+
+        font-size:2rem;
+
+        line-height:1.1;
+
+    }
+
     /* some fixes for readability */
     .section-header h2{
 
