@@ -2206,6 +2206,16 @@ blockquote{
         padding:40px;
     }
 
+    #hero-title{
+
+        font-size:3rem;
+
+        line-height:.95;
+
+        word-break:break-word;
+
+    }
+
     .hero-accent{
 
         padding-left:20px;
