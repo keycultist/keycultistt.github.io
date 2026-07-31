@@ -31,6 +31,21 @@
 
         <header>
             <nav class="sidebar" aria-label="Main navigation">
+                <div class="mobile-header">
+
+                    <button id="menu-toggle" aria-label="Open navigation">
+                        ☰
+                    </button>
+
+                    <h1 class="mobile-logo">
+
+                        BOARD<br>
+                        SPORTS
+
+                    </h1>
+
+                </div>
+
                 <div class="sidebar-logo">
                     <h1 class="logo-text">
                         BOARD<br>
@@ -579,7 +594,7 @@
 
     </section>
 
-    <section id="game">
+<section id="game">
 
     <div class="section-header">
 
@@ -590,27 +605,89 @@
         <h2>SNOWBOARD RUSH</h2>
 
         <p class="section-intro">
-            Dodge trees, avoid rocks and survive as long as possible.
+            Dodge obstacles and survive as long as you can.
         </p>
 
     </div>
 
     <div class="game-ui">
 
-        <span>Score: <span id="score">0</span></span>
-
         <button id="start-game">
             PLAY
         </button>
+
+        <p>
+            Score:
+            <span id="score">0</span>
+        </p>
 
     </div>
 
     <div id="game-area">
 
+        <div id="countdown"></div>
+
         <img
-            src="images/player.png"
+            src="images/spriteSnowboarder.png"
             id="player"
             alt="Snowboarder">
+
+        <div id="game-over-screen">
+
+            <article class="magazine-cover">
+
+                <p class="cover-date">
+                    BOARDSPORTS MAGAZINE
+                </p>
+
+                <h2 id="cover-title">
+                    WIPEOUT
+                </h2>
+
+                <p class="cover-subtitle">
+                    WINTER EDITION
+                </p>
+
+                <img
+                    src="images/crashImage.jpg"
+                    class="cover-photo"
+                    alt="Crash">
+
+                <blockquote id="editor-comment">
+
+                    "Sometimes the mountain wins."
+
+                </blockquote>
+
+                <div class="cover-score">
+
+                    SCORE
+
+                    <span id="final-score">
+                        0
+                    </span>
+
+                </div>
+
+                <button id="restart-game">
+
+                    SHRED AGAIN
+
+                </button>
+
+            </article>
+
+        </div>
+
+        </div>
+
+    </div>
+
+    <div class="mobile-controls">
+
+        <button id="left-btn">◀</button>
+
+        <button id="right-btn">▶</button>
 
     </div>
 

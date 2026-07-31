@@ -557,21 +557,557 @@ setInterval(changeMascotFact,7000);
 
 
 // ===============================
-// GAMEEEE
+// GAMEEEE VARIABLES
 // ===============================
 
-startGame()
+const player = document.getElementById("player");
+const startButton = document.getElementById("start-game");
+const scoreText = document.getElementById("score");
 
-spawnObstacle()
+const gameOverScreen =
+    document.getElementById("game-over-screen");
 
-movePlayer()
+const restartButton =
+    document.getElementById("restart-game");
 
-moveObstacles()
+const finalScore =
+    document.getElementById("final-score");
 
-checkCollision()
+const stamp =
+    document.getElementsByClassName("crash-stamp")
 
-updateScore()
+const gameArea =
+    document.getElementById("game-area");
 
-gameLoop()
+let score = 0;
+let scoreTimer;
 
-gameOver()
+let playerX = 315;
+let playerY = -120;
+
+let movingLeft = false;
+let movingRight = false;
+
+let gameRunning = false;
+
+let gameLoopID;
+let obstacleSpawner;
+
+// ==========================
+// OBSTACLES
+// ==========================
+
+let obstacles = [];
+let obstacleTimer;
+
+function spawnTree(){
+
+    const tree = document.createElement("img");
+
+    tree.src = "images/treeSprite.png";
+
+    tree.classList.add("tree");
+
+    const maxSpawnX = gameArea.clientWidth - 80;
+
+    const x = Math.random() * maxSpawnX;
+
+    tree.style.left = x + "px";
+    tree.style.top = "-80px";
+
+    document.getElementById("game-area").appendChild(tree);
+
+    obstacles.push({
+
+        element: tree,
+
+        x: x,
+
+        y: 720,
+
+        speed: 5
+
+    });
+
+}
+
+function updateObstacles(){
+
+    for(let i = obstacles.length - 1; i >= 0; i--){
+
+        obstacles[i].y -= obstacles[i].speed;
+
+        obstacles[i].element.style.top =
+            obstacles[i].y + "px";
+
+        if(obstacles[i].y < -80){
+
+            obstacles[i].element.remove();
+
+            obstacles.splice(i,1);
+
+        }
+
+    }
+
+}
+
+// ==========================
+// KEYBOARD INPUT
+// ==========================
+
+document.addEventListener("keydown", function(event){
+
+    if(event.key === "ArrowLeft" || event.key === "a"){
+
+        movingLeft = true;
+
+    }
+
+    if(event.key === "ArrowRight" || event.key === "d"){
+
+        movingRight = true;
+
+    }
+
+});
+
+document.addEventListener("keyup", function(event){
+
+    if(event.key === "ArrowLeft" || event.key === "a"){
+
+        movingLeft = false;
+
+    }
+
+    if(event.key === "ArrowRight" || event.key === "d"){
+
+        movingRight = false;
+
+    }
+
+});
+
+// ==========================
+// MOBILE CONTROLS
+// ==========================
+
+const leftBtn = document.getElementById("left-btn");
+const rightBtn = document.getElementById("right-btn");
+
+leftBtn.addEventListener("touchstart", () => {
+
+    movingLeft = true;
+
+});
+
+leftBtn.addEventListener("touchend", () => {
+
+    movingLeft = false;
+
+});
+
+rightBtn.addEventListener("touchstart", () => {
+
+    movingRight = true;
+
+});
+
+rightBtn.addEventListener("touchend", () => {
+
+    movingRight = false;
+
+});
+
+// ==========================
+// GAME LOOP
+// ==========================
+
+function playerDrop(){
+
+    let rotation = -180;
+
+    const drop = setInterval(function(){
+
+        playerY += 8;
+        rotation += 8;
+
+        player.style.top = playerY + "px";
+        player.style.transform =
+            "rotate(" + rotation + "deg)";
+
+        if(playerY >= 120){
+
+            clearInterval(drop);
+
+            player.style.transform = "rotate(0deg)";
+
+            gameRunning = true;
+
+            obstacleTimer = setInterval(spawnTree,1000);
+
+            gameLoop();
+
+        }
+
+    },16);  
+
+}
+
+const countdown = document.getElementById("countdown");
+
+function startGame(){
+
+    if(gameRunning){
+
+        return;
+
+    }
+
+    score = 0;
+    scoreText.textContent = "0000";
+
+    startButton.disabled = true;
+
+    const numbers = ["3","2","1","GO!"];
+
+    let index = 0;
+
+    countdown.style.opacity = "1";
+    countdown.textContent = numbers[index];
+
+    const timer = setInterval(function(){
+
+        index++;
+
+        if(index < numbers.length){
+
+            countdown.textContent = numbers[index];
+
+        }
+        else{
+
+            clearInterval(timer);
+
+            countdown.style.opacity = "0";
+
+            playerDrop();
+
+            scoreTimer = setInterval(updateScore, 100);
+
+            startButton.textContent = "PLAYING";
+
+        }
+
+    },1000);
+
+}
+
+startButton.addEventListener("click", startGame);
+
+let particleFrame = 0;
+
+
+function gameLoop(){
+
+    const maxX = gameArea.clientWidth - player.offsetWidth;
+
+    if(!gameRunning){
+
+        return;
+
+    }
+
+
+    particleFrame++;
+
+    if(particleFrame >= 4){
+
+        particleFrame = 0;
+
+        createSnowParticle();
+
+    }
+
+    if(movingLeft){
+
+        playerX -= 6;
+
+    }
+
+    if(movingRight){
+
+        playerX += 6;
+
+    }
+
+    if(playerX < 0){
+
+        playerX = 0;
+
+    }
+
+    if(playerX > maxX){
+
+        playerX = maxX;
+
+    }
+
+    player.style.left = playerX + "px";
+
+    updateObstacles();
+
+    checkCollisions();
+
+    gameLoopID = requestAnimationFrame(gameLoop);
+
+}
+
+function updateScore(){
+
+    if(!gameRunning){
+
+        return;
+
+    }
+
+    score++;
+
+    scoreText.textContent =
+        score.toString().padStart(4, "0");
+
+    if(score % 50 === 0){
+
+    createScorePopup();
+
+}
+
+}
+
+function checkCollisions(){
+
+    const playerRect = player.getBoundingClientRect();
+
+    for(let i = 0; i < obstacles.length; i++){
+
+        const obstacleRect =
+            obstacles[i].element.getBoundingClientRect();
+
+        if(
+
+            playerRect.left < obstacleRect.right &&
+            playerRect.right > obstacleRect.left &&
+            playerRect.top < obstacleRect.bottom &&
+            playerRect.bottom > obstacleRect.top
+
+        ){
+
+            gameOver();
+
+            return;
+
+        }
+
+    }
+
+}
+
+function gameOver(){
+
+    gameRunning = false;
+
+    clearInterval(obstacleTimer);
+
+    cancelAnimationFrame(gameLoopID);
+
+    gameArea.classList.add("shake");
+
+    setTimeout(function(){
+
+        gameArea.classList.remove("shake");
+
+    },350);
+
+    finalScore.textContent =
+    score.toString().padStart(4, "0");
+
+    gameOverScreen.classList.add("show");
+
+    stamp.classList.add("show");
+
+    clearInterval(scoreTimer);
+
+}
+
+restartButton.addEventListener("click", restartGame);
+
+function restartGame(){
+
+    obstacles.forEach(obstacle =>{
+
+        obstacle.element.remove();
+
+    });
+
+    obstacles = [];
+
+    playerX = 315;
+    playerY = 120;
+
+    player.style.left = playerX + "px";
+    player.style.top = playerY + "px";
+
+    score = 0;
+
+    scoreText.textContent = score;
+
+    gameOverScreen.classList.remove("show");
+
+    startButton.disabled = false;
+    startButton.textContent = "PLAY";
+
+}
+
+function createSnowParticle(){
+
+    const particle = document.createElement("div");
+
+    particle.className = "snow-particle";
+
+    particle.style.left =
+        (playerX + 40 + Math.random()*20) + "px";
+
+    particle.style.top =
+        (playerY - 10) + "px";
+
+    particle.style.setProperty(
+        "--drift",
+        (Math.random()*40-20) + "px"
+    );
+
+    gameArea.appendChild(particle);
+
+    setTimeout(function(){
+
+        particle.remove();
+
+    },800);
+
+}
+
+function createScorePopup(){
+
+    const messages = [
+
+        "SHREDDING!",
+        "SMOOTH LINE!",
+        "CARVING!",
+        "RADICAL!",
+        "SEND IT!",
+        "STYLISH!",
+        "BIG AIR!",
+        "FULL SEND!",
+        "FRESH POWDER!",
+        "NAILED IT!",
+        "KEEP RIDING!",
+        "LOOKING GOOD!",
+        "BOARDSPORTS APPROVED!",
+        "EDITOR'S PICK!",
+        "PRO LEVEL!",
+        "WHAT A RUN!",
+        "PERFECT LINE!",
+        "AMAZING CONTROL!"
+
+    ];
+
+    const popup = document.createElement("div");
+
+    popup.className = "score-popup";
+
+    popup.textContent =
+        messages[Math.floor(Math.random() * messages.length)];
+
+    // Random position near the player
+    popup.style.left =
+        (playerX + 70 + Math.random() * 80 - 40) + "px";
+
+    popup.style.top =
+        (playerY - 20) + "px";
+
+    const colours = [
+
+    "#F97316",
+    "#FFCC00",
+    "#4CAF50",
+    "#00BCD4",
+    "#E91E63"
+
+    ];
+
+    popup.style.color =
+        colours[Math.floor(Math.random() * colours.length)];
+
+    popup.style.transform =
+        `translate(-50%,0) rotate(${Math.random()*20-10}deg)`;
+
+    gameArea.appendChild(popup);
+
+    setTimeout(function(){
+
+        popup.remove();
+
+    },900);
+
+}
+
+gameLoop();
+
+
+// ---------- MOBILE MENU ----------
+
+const menuToggle = document.getElementById("menu-toggle");
+const sidebarLinks = document.querySelector(".sidebar-links");
+
+window.addEventListener("scroll", function(){
+
+    if(window.scrollY < 150){
+
+        mascot.style.opacity = "0";
+
+    }
+    else{
+
+        mascot.style.opacity = "1";
+
+    }
+
+});
+
+menuToggle.addEventListener("click", function(){
+
+    sidebarLinks.classList.toggle("open");
+
+    if(sidebarLinks.classList.contains("open")){
+
+        menuToggle.textContent = "✕";
+
+    }
+    else{
+
+        menuToggle.textContent = "☰";
+
+    }
+
+});
+
+const mobileLinks = document.querySelectorAll(".sidebar-links a");
+
+mobileLinks.forEach(function(link){
+
+    link.addEventListener("click", function(){
+
+        sidebarLinks.classList.remove("open");
+
+    });
+
+});
