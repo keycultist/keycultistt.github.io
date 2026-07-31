@@ -16,6 +16,13 @@
     --stamp-color:#F97316;
 }
 
+html,
+body{
+
+    overflow-x:hidden;
+
+}
+
 /* ---------- MASCOT ---------- */
 
 #fact-mascot{
@@ -305,7 +312,7 @@ body{
 
     gap:26px;
 
-    margin-bottom: 110%;
+    margin-bottom: 70%;
 }
 
 .sidebar-links a{
@@ -360,6 +367,44 @@ body{
 #menu-toggle{
 
     display:none;
+
+}
+
+.desktop-qr{
+
+    margin-top:auto;
+
+    padding:20px;
+
+    text-align:center;
+
+    border-top:1px solid var(--border);
+
+}
+
+.desktop-qr img{
+
+    width:120px;
+
+    margin:10px auto;
+
+    display:block;
+
+}
+
+.desktop-qr p{
+
+    font-weight:700;
+
+    font-size:.9rem;
+
+}
+
+.desktop-qr span{
+
+    font-size:.75rem;
+
+    color:#666;
 
 }
 
@@ -2125,6 +2170,12 @@ blockquote{
         color:white;
 
         touch-action:none;
+
+    }
+
+    .desktop-qr{
+
+        display:none;
 
     }
 
