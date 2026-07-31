@@ -2101,6 +2101,95 @@ blockquote{
 
     }
 
+    main{
+        margin-left: 0;
+    }
+
+    #history,
+    #culture,
+    #compare,
+    #game{
+
+        padding:70px 25px;
+
+    }
+
+    .culture-content{
+
+    position:static;
+
+    min-height:auto;
+
+    }
+
+    .culture-article{
+
+        position:static;
+
+        display:none;
+
+        opacity:1;
+
+        transform:none;
+
+        pointer-events:auto;
+
+    }
+
+    .culture-article.active{
+
+        display:flex;
+
+        flex-direction:column;
+
+    }
+
+    .culture-article img{
+
+        width:100%;
+
+        height:auto;
+
+        aspect-ratio:16/9;
+
+        object-fit:cover;
+
+    }
+
+    .game-over-screen{
+
+        width:90%;
+        max-width:340px;
+
+        max-height:30vh;
+
+        overflow-y:auto;
+
+        padding:20px;
+
+    }
+
+    .magazine-cover img{
+
+        display: none;
+
+    }
+
+    .magazine-cover {
+        max-height: 50vh;
+    }
+
+    .game-button{
+
+        width:70px;
+        height:70px;
+
+        font-size:1.5rem;
+
+    }
+
+
+
     /* Editor mascot */
     
     #mascot-container{
