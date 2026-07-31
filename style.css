@@ -2093,6 +2093,14 @@ blockquote{
 
     }
 
+    /* some fixes for readability */
+    .section-header h2{
+
+        font-size:2.6rem;
+        line-height:1.05;
+
+    }
+
     /* Editor mascot */
     
     #mascot-container{
@@ -2131,7 +2139,7 @@ blockquote{
 
     #fact-box{
 
-        width:220px;
+        width:150px;
 
         position:relative;
 
